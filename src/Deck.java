@@ -35,8 +35,7 @@ public class Deck {
                 cards.add(new Card(ranks[j], suitString, values[j]));
             }
         }
-        // init the size variable
-        this.size = cards.size();
+        shuffle();
 	}
 	/**
 	 * Determines if this deck is empty (no undealt cards).
@@ -59,7 +58,14 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for (int c = cards.size()-1; c > 0; c-- ) {
+		int r = (int)(Math.random()*c);
+		Card temp = cards.get(r);
+		cards.set(r ,cards.get(r));
+		cards.set(c, temp);
+		}
+		this.size = cards.size();
+		
 	}
 
 	/**
