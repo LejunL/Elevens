@@ -78,10 +78,10 @@ public class ElevensBoard extends Board{
 	 *              contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
-		for(int i = 0; i < selectedCards.size() - 1; i++) {
-			Card outer = this.cardAt(i);
-			for(int b = i + 1; b < selectedCards.size(); b++) {
-			Card inner = this.cardAt(b);
+		for(int x : selectedCards) {
+			Card outer = this.cardAt(x);
+			for (int y : selectedCards) {
+			Card inner = this.cardAt(y);
 		if ( outer.pointValue() + inner.pointValue() == 11)
 			return true;
 		}
